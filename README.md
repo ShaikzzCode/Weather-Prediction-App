@@ -2,7 +2,7 @@
 
 Welcome to the Weather Prediction Website, developed by Fizal Ali Shaik.
 
-This website provides you with up-to-date weather predictions based on your location. It utilizes HTML, CSS, and JavaScript to create an interactive and user-friendly experience.
+This website provides you with up-to-date weather predictions based on your search. It utilizes HTML, CSS, and JavaScript to create an interactive and user-friendly experience.
 
 ## Website URL
 
