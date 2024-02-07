@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./script.js" defer></script>r
+  </head>
+
+  <body>
+    <div class="fixedBg fbody">
+      <img
+        src="https://i.ibb.co/qNv7NxZ/pc.webp"
+        alt="backgroundImg"
+        id="bgImg"
+      />
+      <div class="bg_overlay"></div>
+    </div>
+    <section class="main_section">
+      <section class="sec_left">
+        <div class="left_first_div">
+          <div id="search-form" class="inputDiv">
+            <input
+              type="text"
+              id="cityInput"
+              placeholder="Search... "
+              value="Bangalore,Marthahalli"
+            />
+            <!-- <button onclick="searchWeather()">Search</button> -->
+            <img
+              src="./assets/icons/search_img.png"
+              alt="search_btn"
+              onclick="searchWeather()"
+            />
+          </div>
+          <img
+            id="weatherIcon_main"
+            class="weatherIcon_main"
+            src="./assets/card_images/w_img1.png"
+            alt="Weather Icon"
+          />
+          <div class="left_info">
+            <h1 id="left_temparature" class="left_temparature">27&deg;C</h1>
+            <p
+              id="left_currentTime"
+              class="left_currentTime responsive_small_font"
+            >
+              Saturday, 11:09 PM
+            </p>
+            <div>
+              <img
+                src="./assets/icons/cloud_img.png"
+                alt="icons"
+                class="left_icons"
+              />
+              <span id="left_sec_condition" class="responsive_small_font"
+                >Clear</span
+              >
+            </div>
+            <div>
+              <img
+                src="./assets/icons/water_drop_img.png"
+                alt="icons"
+                class="left_icons"
+              />
+              <span id="left_sec_precip" class="responsive_small_font"
+                >Prec - 0%</span
+              >
+            </div>
+          </div>
+        </div>
+        <div class="left_bottom_address">
+          <img
+            src="./assets/icons/location_img.png"
+            alt="icons"
+            class="left_icons locationIcon"
+          />
+          <div
+            class="left_highlight_card responsive_small_font"
+            id="addressCard"
+          >
+            Anantapur, Ap, India
+          </div>
+        </div>
+      </section>
+
+      <section class="sec_right">
+        <div class="sec_right_tabs_holder">
+          <div class="right_tab_btns_holder" id="right_tab_btns_holder">
+            <span onclick="showToday()" class="right_tab_btns" id="btn_today"
+              >Today</span
+            >
+            <span onclick="showWeek()" class="right_tab_btns" id="btn_week"
+              >Week</span
+            >
+          </div>
+          <div class="temp_btns_holder" id="temp_btns_holder">
+            <button
+              onclick="toggleTemperature()"
+              class="temp_btns"
+              id="cen_btn"
+            >
+              °C
+            </button>
+            <button
+              onclick="toggleTemperature()"
+              class="temp_btns"
+              id="far_btn"
+            >
+              °F
+            </button>
+          </div>
+        </div>
+
+        <section class="sec_right_weather_holder">
+          <p class="no_data" id="no_data">NO DATA</p>
+          <div class="weather_holder_today" id="weather_holder_today"></div>
+          <div class="weather_holder_week" id="weather_holder_week"></div>
+        </section>
+
+        <div id="highlightSection">
+          <h2 class="heading_todays_highlight">Today's Highlights</h2>
+          <section class="highlight_card_section">
+            <div class="highlight_card">
+              <h2>UV Index</h2>
+              <h1 id="uvIndexCard">0</h1>
+              <span id="uvIndexCard_data">Low</span>
+            </div>
+            <div class="highlight_card">
+              <h2>Wind Status</h2>
+              <h1 id="windStatusCard">0</h1>
+              <span>Km/h</span>
+            </div>
+            <div class="highlight_card">
+              <h2>Sunrise & Sunset</h2>
+              <h1 id="sunriseSunsetCard">0</h1>
+              <span id="sunsetCard_data">04:46 PM</span>
+            </div>
+            <div class="highlight_card">
+              <h2>Humidity</h2>
+              <h1 id="humidityCard">0</h1>
+              <span id="humidityCard_data">High</span>
+            </div>
+            <div class="highlight_card">
+              <h2>Visibility</h2>
+              <h1 id="visibilityCard">0</h1>
+              <span id="visibilityCard_data">Clear Air</span>
+            </div>
+            <div class="highlight_card">
+              <h2>Air Quality</h2>
+              <h1 id="airQualityCard">0</h1>
+              <span>Very Unhealthy</span>
+            </div>
+          </section>
+        </div>
+        <p class="my_info">Weather Prediction App by <b>Fizal Shaik</b></p>
+      </section>
+    </section>
+
+  </body>
+</html>

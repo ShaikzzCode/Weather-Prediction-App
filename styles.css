@@ -1,0 +1,483 @@
+@font-face {
+    font-family: MyRubik;
+    src: url('./fonts/Rubik.ttf');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* border: 1px solid green; */
+    font-family: 'MyCustomFont', sans-serif;
+    transition: all .5s;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+:root {
+    --mainBlueColor: rgb(0, 94, 255);
+}
+
+body {
+    width: 100%;
+    min-height: 99vh;
+    background-color: var(--mainBlueColor);
+    display: grid;
+    place-items: center;
+}
+
+.main_section {
+    width: 80%;
+    height: auto;
+    min-height: 85%;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.715);
+    display: flex;
+    border-radius: 20px;
+    margin: 50px 0;
+}
+
+.sec_left {
+    min-width: 100px;
+    max-width: 350px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sec_right {
+    min-width: 150px;
+    width: 100%;
+    background-color: rgb(246, 246, 248);
+    padding: 30px;
+}
+
+.left_first_div {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.weatherIcon_main {
+    width: 70%;
+    perspective: 1000px; /* Defines the distance between the z=0 plane and the user in pixels */
+    /* transition: transform 0.8s; */
+}
+
+.weatherIcon_main:hover {
+    scale: 1.1;
+  }
+
+.left_info {
+    width: 100%;
+    padding: 0 20px;
+}
+.left_info>div{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    margin-top: 5px;
+}
+.left_info>div>span{
+    display: inline-block;
+    margin-left: 5px;
+}
+.left_currentTime{
+    margin: 10px 0;
+}
+
+.left_highlight_card {
+    width: 95%;
+}
+
+.weather-icon img {
+    width: 100px;
+    height: 100px;
+}
+
+.weather-info {
+    margin-top: 10px;
+    text-align: center;
+}
+
+/*Search Filed*/
+.inputDiv {
+    width: 80%;
+    height: 35px;
+    background-color: #fff;
+    margin: 20px 0;
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+}
+
+.inputDiv>input {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: none;
+    padding: 0 10px;
+}
+
+.inputDiv>input:focus {
+    border: 2px solid var(--mainBlueColor);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.inputDiv>img {
+    height: 35px;
+    width: 35px;
+    padding: 7px;
+    background-color: var(--mainBlueColor);
+    cursor: pointer;
+}
+
+/*Left Temparature*/
+.left_temparature {
+    /* font-size: 60px; */
+    font-size: clamp(2.5rem, 1.0774rem + 3.6765vw, 3.5rem);
+    font-weight: 500;
+}
+
+.left_icons {
+    width: 15px;
+    height: 15px;
+}
+.locationIcon{
+    margin-right: 5px;
+}
+
+/*Left Bottom Address*/
+.left_bottom_address {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 0 20px;;
+}
+
+
+
+/*Highlight Card*/
+.heading_todays_highlight {
+    margin-top: 60px;
+    margin-bottom: 40px;
+}
+
+.highlight_card_section {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    place-items: center;
+}
+
+.highlight_card {
+    background-color: #fff;
+    min-height: 120px;
+    width: 220px;
+    max-width: 300px;
+    min-width: 100px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 15px 20px;
+    box-shadow: 0 0 15px rgba(135, 135, 135, 0.1);
+}
+
+.highlight_card:hover{
+    scale: 1.05;
+    cursor: context-menu;
+}
+
+.highlight_card>h2 {
+    color: #bbbbbb;
+    font-weight: bold;
+    /* font-size: 16px; */
+    font-size: clamp(1rem, 1.0774rem + 3.6765vw, 0.8rem);
+}
+
+.highlight_card>h1 {
+    text-align: center;
+    /* font-size: 30px; */
+    font-size: clamp(1.5rem, 1.0774rem + 3.6765vw, 1.5rem);
+    font-weight: 500;
+}
+
+.highlight_card>span {
+    font-size: 12px;
+}
+
+/*Tabs*/
+.sec_right_tabs_holder {
+    display: flex;
+    justify-content: space-between;
+}
+
+/*Temparature Buttons*/
+.temp_btns_holder {
+    display: none;
+}
+
+.temp_btns {
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    color: #000;
+    border-radius: 50%;
+    padding: 0;
+    border: none;
+    font-size: 13px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.temp_btns:hover {
+    background-color: #5a5a5a71;
+    color: #fff;
+    scale: 1.2;
+}
+
+/*Tab buttons*/
+.right_tab_btns_holder{
+    min-width: 95px;
+    display: none;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.right_tab_btns {
+    color: rgb(87, 87, 87);
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.right_tab_btns:hover {
+    color: rgba(0, 94, 255, 0.288);
+    font-weight: bold;
+    scale: 1.1;
+}
+
+
+/*weather cards Container*/
+.sec_right_weather_holder {
+    min-height: 300px;
+}
+
+.sec_right_weather_holder>p {
+    height: 300px;
+    text-align: center;
+    line-height: 300px;
+    color: #bbbbbbc3;
+}
+
+.my_info {
+    margin-top: 30px;
+    font-size: 13px;
+    text-align: center;
+}
+
+/*small_weather_card*/
+.small_weather_card {
+    background-color: #ffffff;
+    border-radius: 15px;
+    width: 100px;
+    height: 120px;
+    box-shadow: 0 0 5px rgba(181, 181, 181, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+.small_weather_card>h2 {
+    font-size: 14px;
+}
+
+.small_weather_card>img {
+    width: 50%;
+}
+
+.small_weather_card>p {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.small_weather_card:hover{
+    scale: 1.11;
+    cursor: context-menu;
+}
+
+.active{
+    background-color: #000;
+    color: #fff;
+}
+
+
+.weather_holder_today,
+.weather_holder_week {
+    margin: 40px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    display: none;
+}
+
+
+.activeTab{
+    font-weight: bold;
+    color: var(--mainBlueColor);
+}
+
+
+/* Fixed BG with overlay */
+.fixedBg{
+    width: 100%;
+    height: 100vh;
+    z-index: -10;
+    position: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    top: 0;
+}
+#bgImg{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+}
+.bg_overlay{
+    width: 100%;
+    height: 100%;
+    background-color: #0000008d;
+    position: absolute;
+}
+
+
+
+
+
+
+/* Customize scrollbar track */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Customize scrollbar track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Customize scrollbar thumb */
+::-webkit-scrollbar-thumb {
+    background: var(--mainBlueColor);
+    cursor: pointer;
+}
+
+/* Customize scrollbar thumb on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #0083ce;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Responsive */
+.responsive_small_font{
+    font-size: clamp(1rem 1.5vw 1.5rem);
+}
+@media only screen and (max-width: 425px){
+    .responsive_small_font{
+        font-size: clamp(0.8rem, 1.5vw, 1rem);
+    }
+    .left_bottom_address{
+        margin-top: 8px;
+        align-items: start;
+    }
+    .left_highlight_card {
+        width: 90%;
+    }
+    .left_icons{
+        width: 14px;
+        height: 14px;
+    }
+    .sec_left{
+        width: 100%;
+    }
+    .left_first_div{
+        position: relative;
+    }
+    .weatherIcon_main{
+        width: 100px;
+        position: absolute;
+        top: 60px;
+        right: 10px;
+    }
+    .inputDiv {
+        width: 90%;
+    }
+}
+/* Responsive for Small Weather Cards */
+@media screen and (max-width:768px) {
+    .small_weather_card{
+        width: 120px;
+    }
+    .small_weather_card>img {
+        width: 40%;
+    }
+    .highlight_card{
+        width: 100%;
+    }
+}
+@media screen and (max-width:666px) {
+    .small_weather_card{
+        width: 100%;
+        height: 150px;
+    }
+}
+@media screen and (max-width:576px){
+    .sec_right_tabs_holder{
+        flex-wrap: wrap;
+    }
+    .temp_btns{
+        width: 30px;
+        height: 30px;
+    }
+}
+@media screen and (max-width:557px){
+    .temp_btns{
+        width: 20px;
+        height: 20px;
+        font-size: 10px;
+    }
+}
+@media screen and (max-width:520px){
+    .temp_btns{
+        font-size: 8px;
+    }
+}
+/* Responsive for Main Section */
+@media screen and (max-width:425px) {
+    .main_section{
+        flex-direction: column;
+    }
+}
+@media screen and (min-width:768px) and (max-width:1024px) {
+    .highlight_card{
+        width: 46%;
+    }
+}
